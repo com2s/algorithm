@@ -1,3 +1,4 @@
+# https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5LrsUaDxcDFAXc&categoryId=AV5LrsUaDxcDFAXc&categoryType=CODE&problemTitle=%EB%B0%B1%EB%A7%8C&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1
 # 처음 시도한 느린 방법
 T = int(input())
 # 여러개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
