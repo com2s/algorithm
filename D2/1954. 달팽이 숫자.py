@@ -1,5 +1,5 @@
 # https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PobmqAPoDFAUq&categoryId=AV5PobmqAPoDFAUq&categoryType=CODE&problemTitle=&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1
-# 나중에 더 간단한 풀이 찾아볼 것
+# 아래에서 더 짧게 구현했으나 실행시간과 메모리는 그대로. 다만 가시성이 좋아짐.
 
 T = int(input())
 
