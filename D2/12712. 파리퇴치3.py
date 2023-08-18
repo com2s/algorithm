@@ -1,10 +1,10 @@
 # https://swexpertacademy.com/main/code/userProblem/userProblemDetail.do?contestProbId=AXuARWAqDkQDFARa&categoryId=AXuARWAqDkQDFARa&categoryType=CODE
 
-#import sys
-#sys.stdin = open("input.txt", "r")
-
 T = int(input())
-# 여러개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
+di = [0, 1, 0, -1]
+dj = [1, 0, -1, 0]
+ddi = [1, 1, -1, -1]
+ddj = [1, -1, -1, 1]
 for test_case in range(1, T + 1):
     # ///////////////////////////////////////////////////////////////////////////////////
     
@@ -13,7 +13,6 @@ for test_case in range(1, T + 1):
     A = []
     for n in range(N):
         A.append(list(map(int, input().split())))
-        
     
     B = []
     for i in range(N+2*m):
@@ -29,31 +28,29 @@ for test_case in range(1, T + 1):
         
     sums = []
     for i in range(N):
+        x = i + m 
         for j in range(N):
-            sum = B[i+m][j+m]
-           
+            y = j + m
+            sum1 = sum2 = B[x][y]
             for k in range(1, m+1):
-                sum += B[i+m-k][j+m]
-                sum += B[i+m+k][j+m]
-                sum += B[i+m][j+m-k]
-                sum += B[i+m][j+m+k]
-            
-            sums.append(sum)
-            
-            sum = B[i+m][j+m]
-           
-            for k in range(1, m+1):
-                sum += B[i+m-k][j+m-k]
-                sum += B[i+m+k][j+m-k]
-                sum += B[i+m+k][j+m+k]
-                sum += B[i+m-k][j+m+k]
-            
-            sums.append(sum)
- 
+                for l in range(4):
+                    nx = x + k*di[l]
+                    ny = y + k*dj[l]
+                    sum1 += B[nx][ny]
+
+                    nnx = x + k*ddi[l]
+                    nny = y + k*ddj[l]
+                    sum2 += B[nnx][nny]
+                    
+            sums.append(sum1)
+            sums.append(sum2) 
         
     sum_max = 0
     for i in range(2*N**2):
     	if sums[i] > sum_max:
+            sum_max = sums[i]
+
+    print('#{} {}'.format(test_case, sum_max))
             sum_max = sums[i]
 
     print('#{} {}'.format(test_case, sum_max))
