@@ -2,7 +2,7 @@
 N = int(input())
 
 def f(n):
-    n = str(n)
+    n = str(n) # count 메서드 대신 한 번에 3,6,9를 다 찾는 것이 더 빠를 수도 있다.
     c1 = n.count('3')
     c2 = n.count('6')
     c3 = n.count('9')
